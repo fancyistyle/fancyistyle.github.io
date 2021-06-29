@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="fancyistyle, fancyistyle&#39;blog">
+    <meta name="keywords" content="部署到github上, fancyistyle&#39;blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>fancyistyle | fancyistyle&#39;blog</title>
+    <title>部署到github上 | fancyistyle&#39;blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -419,12 +419,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">fancyistyle</h1>
+                    <h1 class="description center-align post-title">部署到github上</h1>
                 </div>
             </div>
         </div>
@@ -538,9 +538,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -552,21 +556,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-28
+                    2021-06-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-28
+                    2021-06-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    524
                 </div>
                 
 
@@ -586,7 +590,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>首先登录到自己的github，创建一个仓库：</p>
+<p><img src="C:\Users\fancy\myblog\source\images\create_repository.png"></p>
+<p>然后给仓库命名：</p>
+<p><img src="C:\Users\fancy\myblog\source\images\name_repository.png"></p>
+<p>尽量不要用其他的名字，就直接用***&lt;你的用户名&gt;.io***，否则你无法获得免费的个人域名</p>
+<p>然后直接点：</p>
+<p><img src="C:\Users\fancy\myblog\source\images\create.png"></p>
+<p>主题可以随便选一个</p>
+<h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在myblog文件夹中找到_config.yml文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">deploy:
+	type: git
+	repo: git@github.com:fancyistyle/fancyistyle.github.io.git
+	branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我看好多网上的教程都是把branch设定为master,但是我发现这样根本不起作用，只是创建了一个分支，把branch设定为main后就可以正确显示自己想要的内容了。</p>
+<p>再次打开终端，清理掉原来生成的东西：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>重新生成部署文件：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>部署到GitHub：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>假如你之前使用过gitHub上传过文件，这一步应该就结束了，但是假如没有用过，那么你应该生成一个密钥对让自己的电脑加入到可信任的来源：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssh-keygen -t rsa -C "youremail@example.com"  这个邮箱地址应该是你创建github账号使用的邮箱<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="C:\Users\fancy\myblog\source\images\rsa_key.png"></p>
+<p>这一步是让你选择存储位置，因为文件太小了，所以就放在默认位置就好。</p>
+<p>接下来是让你输入上传密码，我不建议输入密码，因为每次上传要输入密码很麻烦，而且还有可能忘记，不过为了安全也可以输入密码</p>
+<p>直接两下回车搞定</p>
+<p><img src="C:\Users\fancy\myblog\source\images\finish_rsa.png"></p>
+<p>这样的话我们就生成了一个密钥对：</p>
+<p><img src="C:\Users\fancy\myblog\source\images\copy_rsa.png"></p>
+<p>登录github,找到右上角的图标，打开点进里面的Settings，再选中里面的SSH and GPG KEYS，点击右上角的New SSH key，然后Title里面随便填，再把刚才id_rsa.pub里面的内容复制到Title下面的Key内容框里面，最后点击Add SSH key，这样就完成了SSH Key的加密。具体步骤也可看下面:</p>
+<p><img src="C:\Users\fancy\myblog\source\images\settring.png"></p>
+<p><img src="C:\Users\fancy\myblog\source\images\ssh_key.png"></p>
+<p>新增一个ssh key</p>
+<p><img src="C:\Users\fancy\myblog\source\images\new_ssh_key.png"></p>
+<p>复制密钥进来</p>
+<p><img src="C:\Users\fancy\myblog\source\images\save_ssh_key.png"></p>
+<p>接下来再输入</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样的话博客就部署完成了</p>
+
                 
             </div>
             <hr/>
@@ -612,7 +663,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fancyistyle.github.io/2021/06/28/fancyistyle/">https://fancyistyle.github.io/2021/06/28/fancyistyle/</a>
+                    <a href="https://fancyistyle.github.io/2021/06/29/bu-shu-dao-github-shang/">https://fancyistyle.github.io/2021/06/29/bu-shu-dao-github-shang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,7 +700,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -819,17 +874,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/28/test/">
+                <a href="/2021/06/29/bu-shu-dao-github-shang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="部署到github上">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">部署到github上</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -839,9 +895,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -850,11 +906,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
                     </a>
                     
                 </div>
@@ -868,13 +925,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/28/hello/">
+                <a href="/2021/06/29/di-yi-pian-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Hello">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第一篇博客">
                         
-                        <span class="card-title">Hello</span>
+                        <span class="card-title">第一篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -885,7 +942,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
                             </span>
                         <span class="publish-author">
                             
@@ -894,6 +951,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/markdown/">
+                        <span class="chip bg-color">markdown</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1133,7 +1198,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">6</span>
+                        class="white-color">843</span>
             
             
             
