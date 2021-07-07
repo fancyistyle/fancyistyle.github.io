@@ -563,7 +563,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-29
+                    2021-07-07
                 </div>
                 
 
@@ -591,12 +591,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>首先登录到自己的github，创建一个仓库：</p>
-<p><img src="C:\Users\fancy\myblog\source\images\create_repository.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/create_repository.png"></p>
 <p>然后给仓库命名：</p>
-<p><img src="C:\Users\fancy\myblog\source\images\name_repository.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/name_repository.png"></p>
 <p>尽量不要用其他的名字，就直接用***&lt;你的用户名&gt;.io***，否则你无法获得免费的个人域名</p>
 <p>然后直接点：</p>
-<p><img src="C:\Users\fancy\myblog\source\images\create.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/create.png"></p>
 <p>主题可以随便选一个</p>
 <h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -619,20 +619,20 @@
 <p>假如你之前使用过gitHub上传过文件，这一步应该就结束了，但是假如没有用过，那么你应该生成一个密钥对让自己的电脑加入到可信任的来源：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssh-keygen -t rsa -C "youremail@example.com"  这个邮箱地址应该是你创建github账号使用的邮箱<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="C:\Users\fancy\myblog\source\images\rsa_key.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/rsa_key.png"></p>
 <p>这一步是让你选择存储位置，因为文件太小了，所以就放在默认位置就好。</p>
 <p>接下来是让你输入上传密码，我不建议输入密码，因为每次上传要输入密码很麻烦，而且还有可能忘记，不过为了安全也可以输入密码</p>
 <p>直接两下回车搞定</p>
-<p><img src="C:\Users\fancy\myblog\source\images\finish_rsa.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/finish_rsa.png"></p>
 <p>这样的话我们就生成了一个密钥对：</p>
-<p><img src="C:\Users\fancy\myblog\source\images\copy_rsa.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/copy_rsa.png"></p>
 <p>登录github,找到右上角的图标，打开点进里面的Settings，再选中里面的SSH and GPG KEYS，点击右上角的New SSH key，然后Title里面随便填，再把刚才id_rsa.pub里面的内容复制到Title下面的Key内容框里面，最后点击Add SSH key，这样就完成了SSH Key的加密。具体步骤也可看下面:</p>
-<p><img src="C:\Users\fancy\myblog\source\images\settring.png"></p>
-<p><img src="C:\Users\fancy\myblog\source\images\ssh_key.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/settring.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/ssh_key.png"></p>
 <p>新增一个ssh key</p>
-<p><img src="C:\Users\fancy\myblog\source\images\new_ssh_key.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/new_ssh_key.png"></p>
 <p>复制密钥进来</p>
-<p><img src="C:\Users\fancy\myblog\source\images\save_ssh_key.png"></p>
+<p><img src="/2021/06/29/bu-shu-dao-github-shang/save_ssh_key.png"></p>
 <p>接下来再输入</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
