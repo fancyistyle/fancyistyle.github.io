@@ -14,7 +14,7 @@
 <meta property="og:description" content="python 中有个实用的包collections,collections.Counter可以用于统计一个元组或列表中某些元素的值. 12345678910111213141516171819202122232425262728293031323334353637import collectionsnumber_list &#x3D; [1, 2, 1, 2, 1, 2, 5, 4, 4, 5, 4, 1,">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-01-28T05:54:23.000Z">
-<meta property="article:modified_time" content="2023-01-28T08:52:08.211Z">
+<meta property="article:modified_time" content="2023-01-28T08:54:10.586Z">
 <meta property="article:author" content="fancyistyle">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -64,10 +64,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fancyistyle.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fancyistyle.github.io"></form>
       </div>
     </div>
   </div>
@@ -97,12 +97,12 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>python 中有个实用的包collections,collections.Counter可以用于统计一个元组或列表中某些元素的值.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import collections</span><br><span class="line"></span><br><span class="line">number_list = [1, 2, 1, 2, 1, 2, 5, 4, 4, 5, 4, 1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line"># 获取这个对象</span><br><span class="line">number_count_dict = collections.Counter(number_list)</span><br><span class="line">print(number_count_dict)</span><br><span class="line">### Counter(&#123;1: 4, 2: 4, 4: 4, 5: 2, 3: 1&#125;)</span><br><span class="line"></span><br><span class="line"># most_common方法可以将该对象转为数量从多到少排列的元组</span><br><span class="line">print(number_count_dict.most_common())</span><br><span class="line">### [(1, 4), (2, 4), (4, 4), (5, 2), (3, 1)]</span><br><span class="line"></span><br><span class="line"># most_common方法的参数可以取前几个数量最多的值(实际相当于[:n])</span><br><span class="line">print(number_count_dict.most_common(1))</span><br><span class="line">### [(1, 4)]</span><br><span class="line"></span><br><span class="line"># 获取数量最多的数的个数</span><br><span class="line">print(number_count_dict.most_common()[0][-1])</span><br><span class="line">### 4</span><br><span class="line"></span><br><span class="line"># 可以获取所有元素</span><br><span class="line">keys, vals = zip(*number_count_dict.most_common())</span><br><span class="line">print(keys)</span><br><span class="line">### (1, 2, 4, 5, 3)</span><br><span class="line"></span><br><span class="line"># 看类型</span><br><span class="line">print(type(number_count_dict))</span><br><span class="line">### &lt;class &#x27;collections.Counter&#x27;&gt;</span><br><span class="line"></span><br><span class="line"># 是不是字典的子类</span><br><span class="line">print(issubclass(type(number_count_dict), dict))</span><br><span class="line">### True</span><br><span class="line"></span><br><span class="line"># 可以找出只出现一次的值(可以换成其他条件)</span><br><span class="line">print([i for i in number_list if number_count_dict[i] == 1])</span><br><span class="line">### [3]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import collections</span><br><span class="line"></span><br><span class="line">number_list = [1, 2, 1, 2, 1, 2, 5, 4, 4, 5, 4, 1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line"># 获取这个对象</span><br><span class="line">number_count_dict = collections.Counter(number_list)</span><br><span class="line">print(number_count_dict)</span><br><span class="line">&gt;&gt;&gt; Counter(&#123;1: 4, 2: 4, 4: 4, 5: 2, 3: 1&#125;)</span><br><span class="line"></span><br><span class="line"># most_common方法可以将该对象转为数量从多到少排列的元组</span><br><span class="line">print(number_count_dict.most_common())</span><br><span class="line">&gt;&gt;&gt; [(1, 4), (2, 4), (4, 4), (5, 2), (3, 1)]</span><br><span class="line"></span><br><span class="line"># most_common方法的参数可以取前几个数量最多的值(实际相当于[:n])</span><br><span class="line">print(number_count_dict.most_common(1))</span><br><span class="line">&gt;&gt;&gt; [(1, 4)]</span><br><span class="line"></span><br><span class="line"># 获取数量最多的数的个数</span><br><span class="line">print(number_count_dict.most_common()[0][-1])</span><br><span class="line">&gt;&gt;&gt; 4</span><br><span class="line"></span><br><span class="line"># 可以获取所有元素</span><br><span class="line">keys, vals = zip(*number_count_dict.most_common())</span><br><span class="line">print(keys)</span><br><span class="line">&gt;&gt;&gt; (1, 2, 4, 5, 3)</span><br><span class="line"></span><br><span class="line"># 看类型</span><br><span class="line">print(type(number_count_dict))</span><br><span class="line">&gt;&gt;&gt; &lt;class &#x27;collections.Counter&#x27;&gt;</span><br><span class="line"></span><br><span class="line"># 是不是字典的子类</span><br><span class="line">print(issubclass(type(number_count_dict), dict))</span><br><span class="line">&gt;&gt;&gt; True</span><br><span class="line"></span><br><span class="line"># 可以找出只出现一次的值(可以换成其他条件)</span><br><span class="line">print([i for i in number_list if number_count_dict[i] == 1])</span><br><span class="line">&gt;&gt;&gt; [3]</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fancyistyle.github.io/2023/01/28/counter/" data-id="cldfmubbt0000h4tdc4tn5f99" data-title="counter" class="article-share-link">Share</a>
+      <a data-url="https://fancyistyle.github.io/2023/01/28/counter/" data-id="cldfmubbt0000h4tdc4tn5f99" data-title="counter" class="article-share-link">Teilen</a>
       
       
       
@@ -116,7 +116,7 @@
   
   
     <a href="/2023/01/05/re/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">re</div>
     </a>
   
@@ -154,7 +154,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
     </div>
@@ -164,7 +164,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
