@@ -71,6 +71,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-map-and-reduce" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/03/map-and-reduce/" class="article-date">
+  <time class="dt-published" datetime="2023-02-03T07:22:07.000Z" itemprop="datePublished">2023-02-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/03/map-and-reduce/">map_and_reduce</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>map函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># map函数 输入两个参数,第一个参数是执行函数,第二个参数或者更多的参数是可迭代对象,.</span><br><span class="line"># 语法</span><br><span class="line">map(fun,iter1,iter2...)</span><br><span class="line"></span><br><span class="line"># 返回的是迭代器</span><br><span class="line"># 意思是把参数序列的内容放入函数中依次进行加工,返回一个迭代器,分别对应着序列的每一个元素</span><br></pre></td></tr></table></figure>
+
+
+<p>reduce函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># reduce函数</span><br><span class="line"># 语法</span><br><span class="line">reduce(fun,iter)</span><br><span class="line"></span><br><span class="line"># 把所有的把前两个作为参数,放入fun里,然后将结果与下一个放入fun里进行加工,直到只剩一个参数,假如有第三个参数的时候,把第三个参数当成第一个数,迭代器中第一个参数当成第二个参数</span><br><span class="line"># 生成单个结果</span><br></pre></td></tr></table></figure>
+
+<p>filter函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># filter函数</span><br><span class="line"># 可以完全用列表生成式搞定,除非很复杂才考虑使用filter</span><br><span class="line"># 语法</span><br><span class="line">filter(fun,iter)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fancyistyle.github.io/2023/02/03/map-and-reduce/" data-id="cldoc708b0000ewtddhyff0cl" data-title="map_and_reduce" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-counter" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/01/28/counter/" class="article-date">
@@ -135,7 +184,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 从起始位置匹配</span><br><span class="line">re.match(pattern, string, flags=0) </span><br><span class="line"># 不一定在起始位置匹配</span><br><span class="line">re.search(pattern, string, flags=0) </span><br><span class="line"># repl可以是一个函数</span><br><span class="line">re.sub(pattern, repl, string, count=0, flags=0) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 从起始位置匹配</span><br><span class="line">re.match(pattern, string, flags=0) </span><br><span class="line"># 不一定在起始位置匹配</span><br><span class="line">re.search(pattern, string, flags=0) </span><br><span class="line"># repl可以是一个函数</span><br><span class="line">re.sub(pattern, repl, string, count=0, flags=0)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -279,7 +328,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
     </div>
   </div>
 
@@ -290,6 +339,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/02/03/map-and-reduce/">map_and_reduce</a>
+          </li>
         
           <li>
             <a href="/2023/01/28/counter/">counter</a>
